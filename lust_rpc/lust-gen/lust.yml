@@ -1,0 +1,9 @@
+# Please refer to https://bytedance.larkoffice.com/wiki/ZxF0winl3ixI9bk4onpc0E5insh for the configuration file format.
+entries:
+  default:
+    filename: lust_gen.rs
+    protocol: thrift
+    services:
+    - idl:
+        source: local
+        path: .././example.thrift

@@ -1,0 +1,57 @@
+[package]
+name = "lust_example_item"
+version = "0.1.0"
+edition.workspace = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+lust-gen = { path = "./lust-gen" }
+
+bytecore.workspace = true
+
+lust.workspace = true
+lust-thrift.workspace = true
+
+volo.workspace = true
+volo-thrift.workspace = true
+pilota.workspace = true
+
+anyhow.workspace = true
+async-trait.workspace = true
+tokio = { workspace = true, features = ["full"] }
+lazy_static = "1.4.0"
+tracing = "0.1.40"
+
+[profile.release]
+opt-level = 3
+debug = true    # set to false to disable debug info
+debug-assertions = false
+overflow-checks = false
+lto = true
+panic = 'unwind'
+incremental = false
+codegen-units = 1
+rpath = false
+
+[workspace]
+members = ["lust-gen"]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+
+[workspace.dependencies]
+bytecore = { version = "*", registry = "crates-byted" }
+
+lust = { version = "*", registry = "crates-byted" }
+lust-build = { version = "*", registry = "crates-byted" }
+lust-thrift = { version = "*", registry = "crates-byted" }
+
+volo = "*"
+volo-thrift = "*"
+pilota = "*"
+
+anyhow = "1"
+async-trait = "0.1"
+tokio = "1"

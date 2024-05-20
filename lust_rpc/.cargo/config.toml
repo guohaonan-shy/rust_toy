@@ -1,0 +1,22 @@
+# 加速下载
+[source.crates-io]
+replace-with = 'rsproxy-sparse'
+
+[source.rsproxy]
+registry = "https://rsproxy.cn/crates.io-index"
+
+[source.rsproxy-sparse]
+registry = "sparse+https://rsproxy.cn/index/"
+
+[registries.rsproxy]
+index = "https://rsproxy.cn/crates.io-index"
+
+# 公司内 Registry
+[source.crates-byted]
+registry = "https://code.byted.org/rust-lang/crates.byted.org-index"
+
+[registries.crates-byted]
+index = "https://code.byted.org/rust-lang/crates.byted.org-index"
+
+[net]
+git-fetch-with-cli = true
